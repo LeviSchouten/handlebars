@@ -5,5 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <ul class="character-list"></ul>
+
+    <script id="character-template" type="text/x-handlebars-template">
+      <li class="characters">
+        <h2>{{name}}</h2>
+        <p>{{title}}</p>
+      </li>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
