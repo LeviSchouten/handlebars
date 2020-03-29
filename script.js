@@ -5,7 +5,7 @@ const cast = {
       title: "Regional Manager"
     },
     {
-      name: "Dwight K schrute",
+      name: "Dwight K Schrute",
       title: "Assistant to the Regional Manager"
     },
     {
@@ -23,5 +23,5 @@ window.onload = event => {
   const template = document.querySelector("#character-template").textContent;
   const compiled = Handlebars.compile(template);
   const list = document.querySelector(".character-list");
-  list.innerHTML = compiled(cast.characters[1]);
+  list.innerHTML = compiled(cast);
 };
