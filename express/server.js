@@ -1,8 +1,19 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3500;
+const axios = require("axios");
 
 const handlebars = require("express-handlebars");
+
+async function getUser(res) {
+  try {
+    const response = await axios.get("https://ghibliapi.herokuapp.com/films");
+    // console.log(response.data);
+    res.render("main", { layout: "index", films: response.data });
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 const cast = {
   characters: [
@@ -40,7 +51,7 @@ app.engine(
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("main", { layout: "index", characters: cast.characters });
+  getUser(res);
 });
 
 app.listen(port, () => console.log(`App listening to port ${port}`));
