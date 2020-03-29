@@ -25,14 +25,15 @@ const cast = {
   ]
 };
 
-app.set("view engine", "handlebars");
+app.set("view engine", "hbs");
 
 // console.log("current view engine:", app.get("view engine"));
 
 app.engine(
-  "handlebars",
+  "hbs",
   handlebars({
-    layoutsDir: __dirname + "/views/layouts"
+    layoutsDir: __dirname + "/views/layouts",
+    extname: "hbs"
   })
 );
 
