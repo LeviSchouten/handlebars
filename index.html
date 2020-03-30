@@ -9,11 +9,13 @@
     <ul class="character-list"></ul>
 
     <script id="character-template" type="text/x-handlebars-template">
+      {{#each characters}}
       <li class="characters">
-        <h2>{{name}}</h2>
+        <h2>{{this.name}}</h2>
         <p>{{title}}</p>
         <p></p>
       </li>
+      {{/each}}
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
